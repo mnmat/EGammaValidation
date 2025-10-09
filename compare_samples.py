@@ -10,6 +10,7 @@ from produce_plots import *
 from Validation.plots import *
 from Validation.hist_helpers import *
 
+import argparse
 
 def create_histograms(label="IdealIC"):
     min_frac = 0.7
@@ -112,9 +113,18 @@ f_2 = "/afs/cern.ch/work/m/mmatthew/private/test_workflow/cms-egamma-hlt-reg/Dat
 
 if __name__ == "__main__":
 
+    parser = argparse.ArgumentParser()
 
-    names = ["A","B"]
-    fs = [f_1, f_2]
+    parser.add_argument("--outDir",type=str,default="/eos/home-m/mmatthew/www/test_workflow/CompareSamples")
+    parser.add_argument("--files",nargs='+',default = ["/afs/cern.ch/work/m/mmatthew/private/test_workflow/cms-egamma-hlt-reg/Data/Reg/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied.root","/afs/cern.ch/work/m/mmatthew/private/test_workflow/cms-egamma-hlt-reg/Data/Reg/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied.root"])
+    parser.add_argument("--labels",nargs='+',default = ["A","B"])
+    parser.add_argument("--colors",nargs="+",default = ["blue","red"])
+    args = parser.parse_args()
+
+    outDir = args.outDir
+    fs = args.files
+    names = args.labels
+    colors = args.colors
 
     fittype = "Cruijff"
 

@@ -5,6 +5,7 @@ from Validation.fit import *
 from Validation.hist_helpers import *
 from Validation.plots import *
 import pdb
+import argparse
 
 class validationPlotter():
     def __init__(self,file_ideal,file_real,outDir,legacy=True):
@@ -200,7 +201,18 @@ ENERGY_CUTS = {"CombinedEEandEB":np.array([[50,75, 100, 200, 400], [75, 100, 200
 
 
 if __name__ == "__main__":
-    vP = validationPlotter(FILE_IDEAL,FILE_REAL,OUTDIR,False)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--file_real_ic",type=str,default = "/afs/cern.ch/work/m/mmatthew/private/test_workflow/cms-egamma-hlt-reg/Data/Reg/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied.root")
+    parser.add_argument("--file_ideal_ic",type=str,default = "/afs/cern.ch/work/m/mmatthew/private/test_workflow/cms-egamma-hlt-reg/Data/Reg/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied.root")
+    parser.add_argument("--outDir",type=str,default="/eos/home-m/mmatthew/www/test_workflow/Plots")
+    args = parser.parse_args()
+
+    file_ideal = args.file_ideal_ic
+    file_real = args.file_real_ic
+    outDir = args.outDir
+
+
+    vP = validationPlotter(file_ideal,file_real,outDir,False)
     #vP.doFullValidation("CombinedEEandEB")
     vP.doFullValidation("EEonly")
     vP.doFullValidation("EBonly")

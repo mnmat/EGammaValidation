@@ -7,6 +7,7 @@ import pdb
 import pickle
 import hist
 import matplotlib.pyplot as plt
+import argparse
 
 from utils.feature_mapping import *
 from Validation.feature_plots import *
@@ -57,8 +58,14 @@ def make_feature_plots(fnames,FEATURES_RUN4_HLT,min_max_ee,min_max_eb,outDir,tru
 
 
 def analyse_features():
-    outDir = "/eos/home-m/mmatthew/www/test_workflow/Features"
-    path = "/afs/cern.ch/work/m/mmatthew/private/test_workflow/cms-egamma-hlt-reg/"
+
+    parser = parser.ArgumentParser()
+    parser.add_argument("--outDir",type=str,default="/eos/home-m/mmatthew/www/test_workflow/Features")
+    parser.add_argument("--path",type=str,default="/afs/cern.ch/work/m/mmatthew/private/test_workflow/cms-egamma-hlt-reg/")
+    args = parser.parse_args()
+
+    outDir = args.outDir
+    path = args.path
 
     train,test = get_training_test_files(path,training_dir="Flat",test_dir="Flat")
 

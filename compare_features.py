@@ -13,6 +13,8 @@ from utils.feature_mapping import *
 
 import mplhep as hep
 
+import argparse
+
 def get_dataframes(fnames):
     dfs_list = []
     keys = ["egRegDataHGCALHLTV1","egRegDataEcalHLTV1"]
@@ -168,15 +170,18 @@ def plot_diff_mesh(dfs,outdir,name="",save=True):
 
 def compare_features():
 
-    outDir = "/eos/home-m/mmatthew/www/test_workflow/CompareFeatures"
+    parser = argparse.ArgumentParser()
 
-    paths = [
-        "/afs/cern.ch/work/m/mmatthew/private/test_workflow/cms-egamma-hlt-reg/",
-        "/afs/cern.ch/work/m/mmatthew/private/test_workflow/cms-egamma-hlt-reg/"
-    ]
-
-    labels = ["A","B"]
-    colors = ["blue","red"]
+    parser.add_argument("--outDir",type=str,default="/eos/home-m/mmatthew/www/test_workflow/CompareFeatures")
+    parser.add_argument("--paths",nargs='+',default = ["/afs/cern.ch/work/m/mmatthew/private/test_workflow/cms-egamma-hlt-reg/","/afs/cern.ch/work/m/mmatthew/private/test_workflow/cms-egamma-hlt-reg/"])
+    parser.add_argument("--labels",nargs='+',default = ["A","B"])
+    parser.add_argument("--colors",nargs="+",default = ["blue","red"])
+    args = parser.parse_args()
+    
+    outDir = args.outDir
+    paths = args.paths
+    labels = args.labels
+    colors = args.colors
 
     train = []
     test = []
