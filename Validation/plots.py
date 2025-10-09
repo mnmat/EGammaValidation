@@ -161,7 +161,7 @@ def make_fitted_histograms(hists,fits,histtype,outDir,fit=True, normalize=True,l
         plot_fitted_histograms(hs,fs,labels,COLORS[:len(labels)],outDir,key,xlabel=r"$E_{reco}/E_{gen}$",fit=fit,normalize=normalize,log=log,fittype=fittype)    
 
 def make_fitted_histograms_combined(hists,fits,histtype,outDir,name,param,fittype="DSCB"):
-    labels = ["%s < %s < %s" %(label.split("_")[0],param, label.split("_")[1]) for label in labels]
+    labels = ["%s < %s < %s" %(key.split("_")[0],param, key.split("_")[0]) for key in hists.keys()]
     hists = [hists[r][histtype] for r in hists]
     fit_values = [fits[r][histtype]["values"] for r in fits]
     fit_uncertainties = [fits[r][histtype]["uncertainties"] for r in fits]

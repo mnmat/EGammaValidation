@@ -152,7 +152,6 @@ def make_energy_plots(df_ideal_cut, df_real_cut, outDir, histtypes,cuts,fittype=
         "h_old_regressed_ratio_ideal": "old regressed energy ratio"}
 
     feature = "eg_gen_energy"
-    pdb.set_trace()
     hists_energies = create_subspace_histograms_legacy(df_ideal_cut,df_real_cut,feature,cuts)
     fit_energies = fit_subspace_histograms(hists_energies,fittype)
 
@@ -182,66 +181,19 @@ def make_eta_plots(df_ideal_cut, df_real_cut, outDir, histtypes,cuts,fittype="DS
     make_parameter_plots(fit_eta,histkeys,cuts,outDir,"etas",r"$\eta_{Gen}$",r"$\mu$ (DSCB)",fittype=fittype)
     return 0
 
-OUTDIR = "/eos/home-m/mmatthew/www/Patatrack16/HLT_baseline/"
-FILE_REAL= "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/Patatrack16/HLT_baseline/s5Reg/Run3HLT_RealIC_RealTraining_stdVar_stdCuts_ntrees1500_applied.root"
-FILE_IDEAL = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/Patatrack16/HLT_baseline/s5Reg/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied.root"
+# Setup
 
-# DoublePhoton_DoubleElectron
+# TODO: 
+# For HLT, REAL file doesn't exist. It is therefore not used in this script and would have to manually be added into the plots. Find better solution to process both Run3 and Run4 samples
 
-# OUTDIR = "/eos/home-m/mmatthew/www/BDT/HLT_baseline/GenSim/unseeded_genMatched/DoublePhoton_DoubleElectron/DoubleElectron"
-# FILE_REAL = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/GenSim/Combined_DoublePhoton_DoubleElectron_FlatPt-1To100-gun/s5Reg_genMatched/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied_electron.root"
-# FILE_IDEAL = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/GenSim/Combined_DoublePhoton_DoubleElectron_FlatPt-1To100-gun/s5Reg_genMatched/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied_electron.root"
-
-# OUTDIR = "/eos/home-m/mmatthew/www/BDT/HLT_baseline/Spring24/unseeded_genMatched/DoublePhotonDoubleElectron/DoublePhoton"
-# FILE_REAL = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/Spring24/Combined_DoublePhoton_DoubleElectron_FlatPt-1To100-gun/s5Reg_genMatched/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied_photon.root"
-# FILE_IDEAL = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/Spring24/Combined_DoublePhoton_DoubleElectron_FlatPt-1To100-gun/s5Reg_genMatched/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied_photon.root"
-
-# OUTDIR = "/eos/home-m/mmatthew/www/BDT/CMSSW_15_1_0_pre1/Spring24/unseeded_genMatched/TrainedOnPhotonTestedOnElectron/"
-# FILE_REAL = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/CMSSW_15_1_0_pre1/Spring24/TICLv4/ele/s5Reg_genMatched/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied.root"
-# FILE_IDEAL = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/CMSSW_15_1_0_pre1/Spring24/TICLv4/ele/s5Reg_genMatched/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied.root"
-
-# # DoubleElectron
-
-OUTDIR = "/eos/home-m/mmatthew/www/BDT/HLT_baseline/GenSim/unseeded_genMatched/DoubleElectron/"
-FILE_REAL = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/GenSim/DoubleElectron_FlatPt-1To100-gun/s5Reg_genMatched/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied.root"
-FILE_IDEAL = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/GenSim/DoubleElectron_FlatPt-1To100-gun/s5Reg_genMatched/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied.root"
-
-# # DoublePhoton
-
-# OUTDIR = "/eos/home-m/mmatthew/www/BDT/HLT_baseline/GenSim/unseeded_genMatched/DoublePhoton/"
-# FILE_REAL = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/GenSim/DoublePhoton_FlatPt-1To100-gun/s5Reg_genMatched/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied.root"
-# FILE_IDEAL = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/GenSim/DoublePhoton_FlatPt-1To100-gun/s5Reg_genMatched/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied.root"
+OUTDIR = "/eos/home-m/mmatthew/www/test_workflow/Plots"
+FILE_REAL = "/afs/cern.ch/work/m/mmatthew/private/test_workflow/cms-egamma-hlt-reg/Data/Reg/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied.root"
+FILE_IDEAL = "/afs/cern.ch/work/m/mmatthew/private/test_workflow/cms-egamma-hlt-reg/Data/Reg/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied.root"
 
 
-
-#OUTDIR = "/eos/home-m/mmatthew/www/BDT/HLT_baseline/Samples_genMatched/TrainedOnElectronTestedOnPhoton/"
-#FILE_REAL= "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/V1/DoubleElectron_FlatPt-1To100-gun/s5Reg_genMatched_HLT_DoublePhoton_FlatPt-1To100-gun/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_EB_ntrees1500_applied.root"
-#FILE_IDEAL= "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/V1/DoubleElectron_FlatPt-1To100-gun/s5Reg_genMatched_HLT_DoublePhoton_FlatPt-1To100-gun/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_EB_ntrees1500_applied.root"
-
-# OUTDIR = "/eos/home-m/mmatthew/www/BDT/HLT_baseline/Samples_genMatched/TrainedOnPhotonTestedOnElectron/"
-# FILE_REAL= "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/V1/DoublePhoton_FlatPt-1To100-gun/s5Reg_genMatched_HLT_DoubleElectron_FlatPt-1To100-gun/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_EB_ntrees1500_applied.root"
-# FILE_IDEAL= "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/V1/DoublePhoton_FlatPt-1To100-gun/s5Reg_genMatched_HLT_DoubleElectron_FlatPt-1To100-gun/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_EB_ntrees1500_applied.root"
-
-# OUTDIR = "/eos/home-m/mmatthew/www/BDT/HLT_baseline/Samples_trained_on_all/DoubleElectron/"
-# FILE_IDEAL = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/V1/DoubleElectron_FlatPt-1To100-gun/s5Reg_HLT_trained_on_all/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied.root"
-# FILE_REAL = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/V1/DoubleElectron_FlatPt-1To100-gun/s5Reg_HLT_trained_on_all/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied.root"
-
-# OUTDIR = "/eos/home-m/mmatthew/www/BDT/HLT_baseline/Samples_genMatched/DoublePhoton_DoubleElectron/Photon"
-# FILE_IDEAL = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/V1/Combined_DoublePhoton_DoubleElectron_FlatPt-1To100-gun/s5Reg_genMatched_HLT/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied_photon.root"
-# FILE_REAL = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/V1/Combined_DoublePhoton_DoubleElectron_FlatPt-1To100-gun/s5Reg_genMatched_HLT/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied_photon.root"
-
-
-#OUTDIR = "/eos/home-m/mmatthew/www/BDT/Phase2/Validation/Electrons_v3"
-#FILE_REAL= "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/htcondor_test_Phase2/DoubleElectron_FlatPt-1To100-gun/s4Flat/DoubleElectron_FlatPt-1To100-gun/s5Reg/Run3HLT_RealIC_RealTraining_stdVar_stdCuts_ntrees1500_applied.root"
-#FILE_IDEAL = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/htcondor_test_Phase2/DoubleElectron_FlatPt-1To100-gun/s4Flat/DoubleElectron_FlatPt-1To100-gun/s5Reg/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied.root"
-#FILE_REAL= "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/htcondor_test_Phase2/DoublePhoton_FlatPt-1To100-gun/s4Flat/DoublePhoton_FlatPt-1To100-gun/s5Reg/Run3HLT_RealIC_RealTraining_stdVar_stdCuts_ntrees1500_applied.root"
-#FILE_IDEAL = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/htcondor_test_Phase2/DoublePhoton_FlatPt-1To100-gun/s4Flat/DoublePhoton_FlatPt-1To100-gun/s5Reg/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied.root"
 ETA_CUTS = {"CombinedEEandEB":np.array([list(np.linspace(-3,2.5,12)), list(np.linspace(-2.5,3,12))]),
             "EEonly": np.array([[-3,-2.6,-2.2,-1.8,1.5,1.8,2.2,2.6], [-2.6,-2.2,-1.8,-1.5,1.8,2.2,2.6,3]]),
             "EBonly": np.array([[-1.5,-1.2,-.9,-.6,-.3,0, 0.3,.6,.9,1.2], [-1.2,-.9,-.6,-.3,0, 0.3,.6,.9,1.2,1.5]])}
-#ENERGY_CUTS = {"CombinedEEandEB":np.array([[50,75, 100, 200, 400], [75, 100, 200, 400,600]]),
-#                "EEonly": np.array([[75, 100, 200, 400], [100, 200, 400,600]]),
-#                "EBonly":np.array([[50,75, 100, 200], [75, 100, 200,400]])}
 ENERGY_CUTS = {"CombinedEEandEB":np.array([[50,75, 100, 200, 400], [75, 100, 200, 400,600]]),
                 "EEonly": np.array([[0, 100, 175, 250, 350,450],[100, 175, 250, 350,450,1000]]),
                 "EBonly":np.array([[0, 35, 55, 75, 95,125], [35, 55, 75, 95,125,400]])}

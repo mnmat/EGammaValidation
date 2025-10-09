@@ -57,10 +57,10 @@ def make_feature_plots(fnames,FEATURES_RUN4_HLT,min_max_ee,min_max_eb,outDir,tru
 
 
 def analyse_features():
-    outDir = "/eos/home-m/mmatthew/www/BDT/HLT_baseline/GenSim/unseeded_genMatched/DoublePhoton/Features_new"
-    path = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/GenSim/DoublePhoton_FlatPt-1To100-gun"
+    outDir = "/eos/home-m/mmatthew/www/test_workflow/Features"
+    path = "/afs/cern.ch/work/m/mmatthew/private/test_workflow/cms-egamma-hlt-reg/"
 
-    train,test = get_training_test_files(path,training_dir="s4Flat_genMatched",test_dir="s4Flat_genMatched")
+    train,test = get_training_test_files(path,training_dir="Flat",test_dir="Flat")
 
     min_max_ee, min_max_eb = get_min_max(train+test,FEATURES_RUN4_HLT,FEATURES_RUN4_HLT,"Phase2",save=False,load=False)
 

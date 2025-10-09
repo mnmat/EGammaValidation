@@ -168,20 +168,20 @@ def plot_diff_mesh(dfs,outdir,name="",save=True):
 
 def compare_features():
 
-    outDir = "/eos/home-m/mmatthew/www/BDT/HLT_baseline/GenSim/unseeded_genMatched/FeatureComparison/DoubleElectron_Photon"
+    outDir = "/eos/home-m/mmatthew/www/test_workflow/CompareFeatures"
 
     paths = [
-        "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/GenSim/DoubleElectron_FlatPt-1To100-gun",
-        "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/GenSim/DoublePhoton_FlatPt-1To100-gun"
+        "/afs/cern.ch/work/m/mmatthew/private/test_workflow/cms-egamma-hlt-reg/",
+        "/afs/cern.ch/work/m/mmatthew/private/test_workflow/cms-egamma-hlt-reg/"
     ]
 
-    labels = ["Electron","Photon"]
+    labels = ["A","B"]
     colors = ["blue","red"]
 
     train = []
     test = []
     for path in paths:
-        train_,test_ = get_training_test_files(path,training_dir="s4Flat_genMatched",test_dir="s4Flat_genMatched")
+        train_,test_ = get_training_test_files(path,training_dir="Flat",test_dir="Flat")
         train = train + train_
         test = test + test_
     
@@ -226,6 +226,7 @@ def compare_features():
     test_ee = [df[:10000] for df in dfs_ee]
     test_eb = [df[:10000] for df in dfs_eb]
 
+    # The following plots are time intensive and don't add much. Feel free to play around if you're interested
 
     # plot_feature_correlation(dfs_ee,labels,os.path.join(outDir_,"EE/2DHist"),save=True)
     # plot_feature_correlation(dfs_eb,labels,os.path.join(outDir_,"EB/2DHist"),save=True)

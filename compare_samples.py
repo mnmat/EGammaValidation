@@ -96,42 +96,6 @@ def loadDataFromTrees(file,trees = ["egRegDataEcalHLTV1","egRegDataHGCALHLTV1"])
     return df_ideal
 
 
-# f_1 = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/Spring23/DoubleElectron_FlatPt-1To100-gun/s5Reg_genMatched_HLT_DoublePhoton_FlatPt-1To100-gun/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_EB_ntrees1500_applied.root"
-# f_2 = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/GenSim/DoubleElectron_FlatPt-1To100-gun/s5Reg_genMatched_DoublePhoton_FlatPt-1To100-gun/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied.root"
-# f_3 = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/Spring24/DoubleElectron_FlatPt-1To100-gun/s5Reg_genMatched_DoublePhoton_FlatPt-1To100-gun/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied.root"
-# OUTDIR = "/eos/home-m/mmatthew/www/BDT/HLT_baseline/Comparison/Samples/TICLv4/unseeded_genMatched/TrainedOnElectronTestedOnPhoton/"
-
-# f_1 = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/Spring23/DoublePhoton_FlatPt-1To100-gun/s5Reg_genMatched_HLT_DoubleElectron_FlatPt-1To100-gun/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_EB_ntrees1500_applied.root"
-# f_2 = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/GenSim/DoublePhoton_FlatPt-1To100-gun/s5Reg_genMatched_DoubleElectron_FlatPt-1To100-gun/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied.root"
-# f_3 = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/Spring24/DoublePhoton_FlatPt-1To100-gun/s5Reg_genMatched_DoubleElectron_FlatPt-1To100-gun/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied.root"
-# OUTDIR = "/eos/home-m/mmatthew/www/BDT/HLT_baseline/Comparison/Samples/TICLv4/unseeded_genMatched/TrainedOnPhotonTestedOnElectron/"
-
-# f_1 = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/Spring23/DoublePhoton_FlatPt-1To100-gun/s5Reg_genMatched_HLT/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied.root"
-# f_2 = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/GenSim/DoublePhoton_FlatPt-1To100-gun/s5Reg_genMatched/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied.root"
-# f_3 = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/Spring24/DoublePhoton_FlatPt-1To100-gun/s5Reg_genMatched/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied.root"
-# OUTDIR = "/eos/home-m/mmatthew/www/BDT/HLT_baseline/Comparison/Samples/TICLv4/unseeded_genMatched/DoublePhoton/"
-
-# f_1 = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/Spring23/DoubleElectron_FlatPt-1To100-gun/s5Reg_genMatched_HLT/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied.root"
-# f_2 = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/GenSim/DoubleElectron_FlatPt-1To100-gun/s5Reg_genMatched/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied.root"
-# f_3 = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/Spring24/DoubleElectron_FlatPt-1To100-gun/s5Reg_genMatched/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied.root"
-# OUTDIR = "/eos/home-m/mmatthew/www/BDT/HLT_baseline/Comparison/Samples/TICLv4/unseeded_genMatched/DoubleElectron/"
-
-# f_1 = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/Spring23/Combined_DoublePhoton_DoubleElectron_FlatPt-1To100-gun/s5Reg_genMatched_HLT/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied_photon.root"
-# f_2 = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/GenSim/Combined_DoublePhoton_DoubleElectron_FlatPt-1To100-gun/s5Reg_genMatched/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied_photon.root"
-# f_3 = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/Spring24/Combined_DoublePhoton_DoubleElectron_FlatPt-1To100-gun/s5Reg_genMatched/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied_photon.root"
-# OUTDIR = "/eos/home-m/mmatthew/www/BDT/HLT_baseline/Comparison/Samples/TICLv4/unseeded_genMatched/Combined/DoublePhoton"
-
-f_1 = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/Spring23/Combined_DoublePhoton_DoubleElectron_FlatPt-1To100-gun/s5Reg_genMatched_HLT/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied_electron.root"
-f_2 = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/GenSim/Combined_DoublePhoton_DoubleElectron_FlatPt-1To100-gun/s5Reg_genMatched/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied_electron.root"
-f_3 = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/Spring24/Combined_DoublePhoton_DoubleElectron_FlatPt-1To100-gun/s5Reg_genMatched/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied_electron.root"
-OUTDIR = "/eos/home-m/mmatthew/www/BDT/HLT_baseline/Comparison/Samples/TICLv4/unseeded_genMatched/Combined/DoubleElectron"
-
-
-f_1 = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/GenSim/Combined_DoublePhoton_DoubleElectron_FlatPt-1To100-gun/s5Reg_genMatched/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied_electron.root"
-f_2 = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/GenSim/DoublePhoton_FlatPt-1To100-gun/s5Reg_genMatched_DoubleElectron_FlatPt-1To100-gun/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied.root"
-f_3 = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/GenSim/DoubleElectron_FlatPt-1To100-gun/s5Reg_genMatched/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied.root"
-
-OUTDIR = "/eos/home-m/mmatthew/www/BDT/HLT_baseline/Comparison/Samples/TICLv4/unseeded_genMatched/GenSim/DoubleElectron"
 
 f_1 = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/GenSim/Combined_DoublePhoton_DoubleElectron_FlatPt-1To100-gun/s5Reg_genMatched/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied_photon.root"
 f_2 = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/GenSim/DoubleElectron_FlatPt-1To100-gun/s5Reg_genMatched_DoublePhoton_FlatPt-1To100-gun/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied.root"
@@ -140,14 +104,17 @@ f_3 = "/eos/cms/store/group/dpg_hgcal/comm_hgcal/mmatthew/BDT/Samples/GenSim/Dou
 OUTDIR = "/eos/home-m/mmatthew/www/BDT/HLT_baseline/Comparison/Samples/TICLv4/unseeded_genMatched/GenSim/DoublePhoton"
 
 
+OUTDIR = "/eos/home-m/mmatthew/www/test_workflow/CompareSamples"
+f_1 = "/afs/cern.ch/work/m/mmatthew/private/test_workflow/cms-egamma-hlt-reg/Data/Reg/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied.root"
+f_2 = "/afs/cern.ch/work/m/mmatthew/private/test_workflow/cms-egamma-hlt-reg/Data/Reg/Run3HLT_IdealIC_IdealTraining_stdVar_stdCuts_ntrees1500_applied.root"
+
 
 
 if __name__ == "__main__":
 
 
-    #names = ["Spring23","GenSim","Spring24"]
-    names = ["Combined","Electron Trained","Photon Trained"]
-    fs = [f_1, f_2, f_3]
+    names = ["A","B"]
+    fs = [f_1, f_2]
 
     fittype = "Cruijff"
 
@@ -155,16 +122,7 @@ if __name__ == "__main__":
 
     sample = []
     dfs = []
-    for f in fs:
-        if "Combined" in f:
-            test_sample = f.split(".root")[0].split("_")[-1]
-            name = "Combined_%s"%(test_sample)
-        else:
-            if "DoubleElectron" in f:
-                name = "DoubleElectron"
-            elif "DoublePhoton" in f:
-                name = "DoublePhoton"
-
+    for name,f in zip(names,fs):
         sample.append(name) 
         df = loadDataFromTrees(f)
         df = applyCuts(df)
@@ -203,11 +161,7 @@ if __name__ == "__main__":
         # Plot regressed energy
 
         histkeys = {"h_regressed_ratio_%s"%names[0]:"%s"%names[0],
-            #"h_eg_energy_ratio_ideal":"eg energy ratio",
-            #"h_SC_rawEnergy_ratio_ideal":"SC rawEnergy ratio",
-            #"h_old_regressed_ratio_ideal": "old regressed energy ratio",
-            "h_regressed_ratio_%s"%names[1]:"%s"%names[1],
-            "h_regressed_ratio_%s"%names[2]:"%s"%names[2]}
+            "h_regressed_ratio_%s"%names[1]:"%s"%names[1]}
 
         outDir = os.path.join(out,"RegressedEnergy")
         create_dirs(outDir,add_php=True)
@@ -218,11 +172,7 @@ if __name__ == "__main__":
         # Plot old regressed energy
 
         histkeys = {"h_old_regressed_ratio_%s"%names[0]:"%s"%names[0],
-            #"h_eg_energy_ratio_ideal":"eg energy ratio",
-            #"h_SC_rawEnergy_ratio_ideal":"SC rawEnergy ratio",
-            #"h_old_regressed_ratio_ideal": "old regressed energy ratio",
-            "h_old_regressed_ratio_%s"%names[1]:"%s"%names[1],
-            "h_old_regressed_ratio_%s"%names[2]:"%s"%names[2]}
+            "h_old_regressed_ratio_%s"%names[1]:"%s"%names[1]}
 
         outDir = os.path.join(out,"OldRegressedEnergy")
         create_dirs(outDir,add_php=True)
@@ -233,11 +183,7 @@ if __name__ == "__main__":
         # Plot SC rawEnergy
 
         histkeys = {"h_SC_rawEnergy_ratio_%s"%names[0]:"%s"%names[0],
-            #"h_eg_energy_ratio_ideal":"eg energy ratio",
-            #"h_SC_rawEnergy_ratio_ideal":"SC rawEnergy ratio",
-            #"h_old_regressed_ratio_ideal": "old regressed energy ratio",
-            "h_SC_rawEnergy_ratio_%s"%names[1]:"%s"%names[1],
-            "h_SC_rawEnergy_ratio_%s"%names[2]:"%s"%names[2]}
+            "h_SC_rawEnergy_ratio_%s"%names[1]:"%s"%names[1]}
 
         outDir = os.path.join(out,"RawEnergy")
         create_dirs(outDir,add_php=True)
